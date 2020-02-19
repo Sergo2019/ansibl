@@ -10,6 +10,4 @@
     raw: docker run --name some-nginx -d --restart=always -p 8585:80 fastik/frontendlk
     become: yes
 
-  - name: "htop install"
-    raw: apt install -y htop
 
