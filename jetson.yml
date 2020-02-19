@@ -7,8 +7,7 @@
   tasks:
 
   - name: "docker"
-    raw: docker push fastik/frontend_lk:latest
-    raw: docker run --name some-nginx -d --restart=always -p 8585:80 fastik/frontend_lk
+    raw: docker run --name some-nginx -d --restart=always -p 8585:80 fastik/frontendlk
     become: yes
 
   - name: "htop install"
