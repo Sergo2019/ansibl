@@ -1,5 +1,10 @@
 ---
-tasks:
+- hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+  
+  tasks:
 
   - name: Install Nginx package
     package: name=nginx state=present
