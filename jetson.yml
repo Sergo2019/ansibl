@@ -1,14 +1,13 @@
 ---
-- hosts: all
-  become: yes
+- 
   
   tasks:
 
   - name: Install Nginx package
     package: name=nginx state=present
 
-  - name: "upgrade"
-    raw: apt-get upgrade -y
+  - name: "docker"
+    raw: docker run --name some-nginx -d --restart=always -p 8585:80 fastik/frontend_lk
     become: yes
 
   - name: "FIX: Ubuntu 16.04 LTS doesn't come with certain modules, required by ansible"
