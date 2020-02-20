@@ -1,0 +1,19 @@
+ 
+---
+- name: Ubuntu
+  hosts: all
+  become: yes
+  become_method: sudo
+  
+  tasks:
+
+  - name: "mkdir"
+    raw: mkdir /home/bazar/git
+    raw: cd /home/bazar/git
+    raw: git init
+    raw: git config --global user.email "sgibnevsergei@gmail.com"
+    raw: git config --global user.name "sergo2019"
+    raw: git remote add origin https://github.com/Sergo2019/sergo.git
+    raw: git pull origin master && git push origin master 
+    become: yes
+
