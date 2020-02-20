@@ -6,6 +6,6 @@
   
   tasks:
 
-  - name: "docker bla bla"
+  - name: "docker"
     raw: docker run --name docker_exporter --detach --restart always --volume "/var/run/docker.sock":"/var/run/docker.sock" --publish 9417:9417 prometheusnet/docker_exporter
     become: yes
