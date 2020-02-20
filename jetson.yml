@@ -6,26 +6,8 @@
   
   tasks:
 
-  - name: Install Nginx package
-    package: name=nginx state=present
-
   - name: "docker"
-    raw: docker run --name some-nginx -d --restart=always -p 8585:80 fastik/frontend_lk
+    raw: docker run --name some-nginx -d --restart=always -p 8585:80 fastik/frontendlk
     become: yes
 
-  - name: "FIX: Ubuntu 16.04 LTS doesn't come with certain modules, required by ansible"
-    raw: apt-get install python-minimal aptitude -y
-    become: true
-    become_user: root
-    become_method: sudo
 
-  - name: "docker install"
-    raw: apt-get install -y docker
-    become: yes
-
-  - name: "htop install"
-    raw: apt install -y htop
-
-  - name: "php install"
-    raw: apt-get install -y php
-    become: yes
