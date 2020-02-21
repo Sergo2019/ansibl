@@ -12,7 +12,8 @@
   - name: "cd"
     raw: cd /home/bazar/git
 
-  - git:
+  - name: "git pull"
+    git: 
     repo: "https://{{ sergo2019 | urlencode }}:{{ 2204Jv05 | urlencode }}@github.com/Sergo2019/sergo.git"
     clone: no
     update: no 
