@@ -11,6 +11,10 @@
     raw: mkdir /home/bazar/git
   - name: "cd"
     raw: cd /home/bazar/git
+   
+  - name: install git package
+    apt:
+    name: git
 
   - name: "git pull"
     git: 
