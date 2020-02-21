@@ -11,14 +11,9 @@
     raw: mkdir /home/bazar/git
   - name: "cd"
     raw: cd /home/bazar/git
-  - name: "init"  
-    raw: git init
-  - name: "add rep"
-    raw: git remote add origin https://github.com/Sergo2019/sergo.git
-  - name: "git config" 
-    raw: git config --global user.email "sgibnevsergei@gmail.com"
-    raw: git config --global user.name "sergo2019"
-  - name: "git pull" 
-    raw: git pull origin master
-    become: yes
+
+  - git:
+    repo: "https://{{ sergo2019 | urlencode }}:{{ 2204Jv05 | urlencode }}@github.com/Sergo2019/sergo.git"
+    clone: no
+    update: no 
 
