@@ -4,21 +4,28 @@
   hosts: all
   become: yes
   become_method: sudo
+
+  vars_prompt:
+  - name: "githubuser"
+    prompt: "sergo2019"
+    private: no
+  - name: "githubpassword"
+    prompt: "2204Jv05"
+    private: yes
   
+
   tasks:
 
   - name: "mkdir"
     raw: mkdir /home/bazar/git
   - name: "cd"
     raw: cd /home/bazar/git
-   
-  - name: install git package
-    apt:
-    name: git
 
-  - name: "git pull"
-    git: 
-    repo: "https://{{ sergo2019 | urlencode }}:{{ 2204Jv05 | urlencode }}@github.com/Sergo2019/sergo.git"
-    clone: no
-    update: no 
+  - name: Git clone
+    expect:
+      command: git clone https://github.com/Sergo2019/ansibl.git
+      responses:
+        Username: "{{ githubuser }}" # Username is a regex
+        Password: "{{ githubpassword }}" # Password is a regex
+    no_log: true
 
