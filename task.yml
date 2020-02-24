@@ -13,7 +13,8 @@
     raw: rm -rf  ansibl
 
   - git:
-      repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
+     # repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
+      repo=https://github.com/Sergo2019/sergo.git
       dest=/home/bazar/git/ansibl
 
   - name: "cd ansibl"
