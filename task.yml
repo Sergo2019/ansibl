@@ -5,6 +5,8 @@
   become_method: sudo
 
   tasks:
+  -name: "install pip"
+   raw: sudo apt install python-pip -y
 
   - name: "install pexpect"
     pip:
