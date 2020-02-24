@@ -1,5 +1,5 @@
 ---
-- name: Ubuntu
+- name: Jetson
   hosts: all
   become: yes
   become_method: sudo
@@ -22,25 +22,35 @@
 #      force=yes
 #    become: yes
 #    become_user: bazar
-
-  - name: "create ansibl directory"
-    file: dest=/home/bazar/gid state=directory owner=bazar group=bazar mode=0777
-
-  - name: "Clone git repository"
-    git:
-      repo: "https://github.com/Sergo2019/sergo.git"
-      dest: /home/bazar/gid
-      version: master
-      update: yes
-      accept_hostkey: no
-    become: yes
+#-------------------------------------------------------------------------
+#  - name: "create ansibl directory"
+#    file: dest=/home/bazar/gid state=directory owner=bazar group=bazar mode=0777
+#
+#  - name: "Clone git repository"
+#    git:
+#      repo: "https://github.com/Sergo2019/sergo.git"
+#      dest: /home/bazar/gid
+#      version: master
+#      update: yes
+#      accept_hostkey: no
+#    become: yes
     #become_flags: "-E"
-    become_user: bazar
-    register: cloned
-
+#    become_user: bazar
+#    register: cloned
+#-------------------------------------------------------------------------------
 #  - name: "cd ansibl"
 #    raw: cd ansibl
 
 #  - name: "touch"
 #    raw: touch 1.txt
 
+  - name: "openalpr-licenseregister"
+#    raw: sudo docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister 
+    expect:
+      command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
+      responses:
+        Question:
+          - test666@mmc.kg
+          - 2204Jv05
+#        -(?!)ENTER: "2204Jv05"
+    become: yes
