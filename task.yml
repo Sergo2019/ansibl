@@ -12,15 +12,9 @@
   - name: "rm"
     raw: rm -rf  ansibl
 
-  - name: "git clone" 
-    git: >
+  - git: >
       repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
       dest=/home/bazar/git/ansibl
-      #accept_hostkey: no
-    become: yes
-    group: 
-      name: bazar
-      state: present
     become_user: bazar
 
   - name: "cd ansibl"
