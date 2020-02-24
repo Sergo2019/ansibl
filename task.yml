@@ -65,7 +65,7 @@
 #    raw: sudo docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister 
     expect:
       command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
-      timeout: 1200
+#      timeout: 1200
       responses:
 #        Question:
 #          - test666@mmc.kg
