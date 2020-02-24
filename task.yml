@@ -7,7 +7,7 @@
   tasks:
 
   - name: "install pexpect"
-    pip2:
+    pip:
       name: pexpect
     become: yes
 #  - name: "cd"
