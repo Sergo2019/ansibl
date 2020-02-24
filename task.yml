@@ -19,13 +19,13 @@
       command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
 #      timeout: 1200
       responses:
-#        '
-#        "Registering agent system ID: 13439208104933893133",
-#        "",
-#        "This utility activates your OpenALPR agent.  If you have not already, register an account on https://cloud.openalpr.com/account/register",
-#        "Once registered, enter your e-mail address and password below to activate this agent",
-#        "",
+        '"Registering agent system ID: 13439208104933893133",'
+        '"",'
+        '"This utility activates your OpenALPR agent.  If you have not already, register an account on https://cloud.openalpr.com/account/register",'
+        '"Once registered, enter your e-mail address and password below to activate this agent",'
+        '"",'
        '"Enter your account e-mail: "': 'test666@mmc.kg'
+      echo: yes
 #        Question:
 #          - "Enter your account e-mail: "
 #          - "Enter your account password: "
