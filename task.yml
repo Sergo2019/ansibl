@@ -5,15 +5,6 @@
   become: yes
   become_method: sudo
 
-  vars_prompt:
-  - name: "githubuser"
-    prompt: "sergo2019"
-    private: no
-  - name: "githubpassword"
-    prompt: "2204Jv05"
-    private: yes
-  
-
   tasks:
 
   - name: "mkdir"
@@ -21,11 +12,11 @@
   - name: "cd"
     raw: cd /home/bazar/git
 
-  - name: Git clone
+  - name: "Git clone"
     expect:
       command: git clone https://github.com/Sergo2019/ansibl.git
       responses:
-        Username: "{{ githubuser }}" # Username is a regex
-        Password: "{{ githubpassword }}" # Password is a regex
+        Username: "sergo2019"
+        Password: "2204Jv05" 
     no_log: true
 
