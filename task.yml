@@ -2,6 +2,7 @@
 ---
 - name: Ubuntu
   hosts: all
+  vars: ansible_python_interpreter: /usr/bin/python3
   become: yes
   become_method: sudo
 
@@ -11,7 +12,7 @@
     raw: mkdir /home/bazar/git
   - name: "cd"
     raw: cd /home/bazar/git
-    raw: /usr/bin/python3
+
   - name: "Git clone"
     expect:
       command: git clone https://github.com/Sergo2019/ansibl.git
