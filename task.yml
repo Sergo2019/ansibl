@@ -20,7 +20,7 @@
 
     cli_command:
       command: "docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister"
-      check_all: True
+#      check_all: True
       prompt:
         - "Enter your account e-mail: "
         - "Enter your password: "
