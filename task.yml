@@ -6,7 +6,8 @@
 
   tasks:
   - name: "install pip"
-    raw: apt install python-pip -y
+    apt:
+       name: python-pip
     become: yes
     become_method: sudo
     become_user: hiden
