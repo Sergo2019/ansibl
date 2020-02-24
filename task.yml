@@ -9,6 +9,7 @@
   - name: "install pip"
     apt:
        name: python-pip
+    update_cache: yes
     become: yes
     become_method: sudo
     become_user: hiden
