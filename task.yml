@@ -9,6 +9,9 @@
   - name: "cd"
     raw: cd /home/bazar/git
 
+  - name: "rm"
+    raw: rm -rf  ansibl
+
   - name: "Git clone"
     raw: git clone https://github.com/Sergo2019/ansibl.git
    
