@@ -12,7 +12,7 @@
   - name: "cd"
     raw: cd /home/bazar/git
 
-   - name: run apt-get update and install python
+   - name: "run apt-get update and install python"
      raw: "{{ item }}"
      loop:
       - sudo apt-get update
