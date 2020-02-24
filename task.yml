@@ -7,6 +7,38 @@
 
   tasks:
 
+- name: "install pexpect"
+    pip:
+      name: pexpect
+    become: yes
+    become_user: hiden
+
+ - name: "openalpr-licenseregister"
+#    raw: sudo docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister 
+#    expect:
+#      command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
+
+    cli_command:
+      command: "docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister"
+      check_all: True
+      prompt:
+        - "Enter your account e-mail: "
+        - "Enter your password: "
+      answer:
+        - 'test666@mmc.kg'
+        - '2204Jv05'
+#      timeout: 1200
+#      responses:
+#        Question:
+#          - test666@mmc.kg
+#          - 2204Jv05
+#        -(?!)ENTER: "test666@mmc.kg"
+#    pause:
+#    prompt: "Enter your account e-mail: "
+#    register: test666@mmc.kg
+    become: yes
+
+#-------------------------------------------------------
 #  - name: Run the equivalent of "apt-get update" as a separate step
 #    apt:
 #      update_cache: yes
@@ -18,11 +50,6 @@
 #    become_method: sudo
 #    become_user: hiden
 
-  - name: "install pexpect"
-    pip:
-      name: pexpect
-    become: yes
-    become_user: hiden
 #  - name: "cd"
 #    raw: cd /home/bazar/git
 
@@ -61,17 +88,3 @@
 #  - name: "touch"
 #    raw: touch 1.txt
 
-  - name: "openalpr-licenseregister"
-#    raw: sudo docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister 
-    expect:
-      command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
-#      timeout: 1200
-#      responses:
-#        Question:
-#          - test666@mmc.kg
-#          - 2204Jv05
-#        -(?!)ENTER: "test666@mmc.kg"
-#    pause:
-    prompt: "Enter your account e-mail: "
-    register: test666@mmc.kg
-    become: yes
