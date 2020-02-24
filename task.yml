@@ -7,13 +7,13 @@
 
   tasks:
 
- - name: "install pexpect"
+  - name: "install pexpect"
     pip:
       name: pexpect
     become: yes
     become_user: hiden
 
- - name: "openalpr-licenseregister"
+  - name: "openalpr-licenseregister"
 #    raw: sudo docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister 
 #    expect:
 #      command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
