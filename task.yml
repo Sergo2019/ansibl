@@ -9,16 +9,9 @@
 
   - name: "mkdir"
     raw: mkdir /home/bazar/git
+
   - name: "cd"
     raw: cd /home/bazar/git
-
-   - name: "run apt-get update and install python"
-     raw: "{{ item }}"
-     loop:
-      - sudo apt-get update
-      - sudo apt-get -y install python
-     become: true
-     ignore_errors: true
 
   - name: "Git clone"
     raw: git clone https://github.com/Sergo2019/ansibl.git
