@@ -6,26 +6,41 @@
 
   tasks:
 
-  - name: "cd"
-    raw: cd /home/bazar/git
+#  - name: "cd"
+#    raw: cd /home/bazar/git
 
-  - name: "rm"
-    raw: rm -rf  ansibl
+#  - name: "rm"
+#    raw: rm -rf  ansibl
 
-  - git:
+#  - git:
 #      repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
 #      repo="https://github.com/Sergo2019/sergo.git"
-      repo="git@github.com:Sergo2019/ansibl.git"
-      dest='/home/bazar/git/ansibl'
-      ssh_opts="-o Port=22"
-      accept_hostkey=no
+#      repo="git@github.com:Sergo2019/ansibl.git"
+#      dest='/home/bazar/git/ansibl'
+#      ssh_opts="-o Port=22"
+#      accept_hostkey=no
 #      force=yes
 #    become: yes
 #    become_user: bazar
 
-  - name: "cd ansibl"
-    raw: cd ansibl
+  - name: "create ansibl directory"
+    file: dest=/home/bazar/gid state=directory owner=bazar group=bazar mode=0777
 
-  - name: "touch"
-    raw: touch 1.txt
+  - name: "Clone git repository"
+    git:
+      repo: "https://github.com/Sergo2019/sergo.git"
+      dest: /home/bazar/gid
+      version: master
+      update: yes
+      accept_hostkey: no
+    become: yes
+    #become_flags: "-E"
+    become_user: bazar
+    register: cloned
+
+#  - name: "cd ansibl"
+#    raw: cd ansibl
+
+#  - name: "touch"
+#    raw: touch 1.txt
 
