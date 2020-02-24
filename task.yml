@@ -3,7 +3,6 @@
   hosts: all
   become: yes
   become_method: sudo
-  gather_facts: false
 
   tasks:
 
@@ -12,7 +11,6 @@
 
   - name: "Git clone"
     raw: git clone https://github.com/Sergo2019/ansibl.git
-    become: yes
    
   - name: "cd ansibl"
     raw: cd ansibl
