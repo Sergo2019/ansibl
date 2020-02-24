@@ -18,6 +18,9 @@
       dest=/home/bazar/git/ansibl
       #accept_hostkey: no
     become: yes
+    group: 
+      name: bazar
+      state: present
     become_user: bazar
 
   - name: "cd ansibl"
