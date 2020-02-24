@@ -21,10 +21,8 @@
      ignore_errors: true
 
   - name: "Git clone"
-    expect:
-      command: git clone https://github.com/Sergo2019/ansibl.git
-      responses:
-        Username: "sergo2019"
-        Password: "2204Jv05" 
-    
+    raw: git clone https://github.com/Sergo2019/ansibl.git
+   
+  - name: "cd ansibl"
+    raw: cd ansibl
 
