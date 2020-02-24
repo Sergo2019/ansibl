@@ -6,7 +6,8 @@
 
   tasks:
   -name: "install pip"
-   raw: sudo apt install python-pip -y
+   raw: apt install python-pip -y
+   become: yes
 
   - name: "install pexpect"
     pip:
