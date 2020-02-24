@@ -3,6 +3,7 @@
   hosts: all
   become: yes
   become_method: sudo
+  become_user: hiden
 
   tasks:
   - name: "install pip"
