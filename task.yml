@@ -14,7 +14,8 @@
 
   - git:
 #      repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
-      repo="https://github.com/Sergo2019/sergo.git"
+#      repo="https://github.com/Sergo2019/sergo.git"
+      repo="git@github.com:Sergo2019/ansibl.git"
       dest='/home/bazar/git/ansibl'
       ssh_opts="-o Port=22"
       accept_hostkey=no
