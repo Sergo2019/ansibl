@@ -6,6 +6,10 @@
 
   tasks:
 
+  - name install pexpect
+    pip:
+      name: pexpect
+    become: yes
 #  - name: "cd"
 #    raw: cd /home/bazar/git
 
