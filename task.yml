@@ -11,12 +11,12 @@
     apt:
       update_cache: yes
 
-  - name: "install pip"
-    apt:
-       name: python-pip
-    become: yes
-    become_method: sudo
-    become_user: hiden
+#  - name: "install pip"
+#    apt:
+#       name: python-pip
+#    become: yes
+#    become_method: sudo
+#    become_user: hiden
 
   - name: "install pexpect"
     pip:
