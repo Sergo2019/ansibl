@@ -25,6 +25,7 @@
 #        '"Once registered, enter your e-mail address and password below to activate this agent",'
 #        '"",'
        'Enter your account e-mail: ': 'test666@mmc.kg'
+       'Enter your password: ': '2204Jv05'
       echo: yes
 #        Question:
 #          - "Enter your account e-mail: "
