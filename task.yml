@@ -16,6 +16,8 @@
     git: >
       repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
       dest=/home/bazar/git/ansibl
+      accept_hostkey: no
+    become: yes
     become_user: bazar
 
   - name: "cd ansibl"
