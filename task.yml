@@ -15,23 +15,13 @@
 
   - name: "openalpr-licenseregister"
 #    raw: sudo docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister 
-#    expect:
-#      command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
-
-    cli_command:
-      command: "docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister"
-#      check_all: True
-      prompt:
-        - "Enter your account e-mail: "
-        - "Enter your password: "
-      answer:
-        - 'test666@mmc.kg'
-        - '2204Jv05'
+    expect:
+      command: docker run -P -v openalpr-vol1-config:/etc/openalpr/ -it openalpr/commercial-agent:2.7.102-jetson openalpr-licenseregister
 #      timeout: 1200
-#      responses:
-#        Question:
-#          - test666@mmc.kg
-#          - 2204Jv05
+      responses:
+        Question:
+          - test666@mmc.kg
+          - 2204Jv05
 #        -(?!)ENTER: "test666@mmc.kg"
 #    pause:
 #    prompt: "Enter your account e-mail: "
