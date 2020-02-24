@@ -12,10 +12,9 @@
   - name: "rm"
     raw: rm -rf  ansibl
 
-  - git: >
+  - git:
       repo=https://sergo2019:2204Jv05@github.com/Sergo2019/ansibl.git
       dest=/home/bazar/git/ansibl
-    become_user: bazar
 
   - name: "cd ansibl"
     raw: cd ansibl
