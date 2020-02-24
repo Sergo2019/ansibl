@@ -70,5 +70,8 @@
 #        Question:
 #          - test666@mmc.kg
 #          - 2204Jv05
-        -(?!)ENTER: "test666@mmc.kg"
+#        -(?!)ENTER: "test666@mmc.kg"
+    pause:
+    prompt: "Enter your account e-mail: "
+    register: test666@mmc.kg
     become: yes
