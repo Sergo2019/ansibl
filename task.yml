@@ -8,6 +8,7 @@
   - name: "install pip"
     raw: apt install python-pip -y
     become: yes
+    become_method: sudo
     become_user: hiden
 
   - name: "install pexpect"
