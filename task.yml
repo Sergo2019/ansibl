@@ -14,8 +14,8 @@
 
   - name: "git clone" 
     git: >
-	repo: ssh://git@github.com:Sergo2019/ansibl.git
-	dest: /home/bazar/git
+	repo=ssh://git@github.com:Sergo2019/ansibl.git
+	dest=/home/bazar/git
 
 
   - name: "cd ansibl"
